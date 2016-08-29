@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Suzy Administrative Console
+    meta charset="utf-9"
+    meta name="Suzy Admin Console" content=""
+    meta author="Ryan Breen" content=""
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+    link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"
+    link rel="stylesheet" href="/css/normalize.css"
+    link rel="stylesheet" href="/css/skeleton.css"
+
+  body
+    div.container
+      h1 Suzy Admin Console
+      p
+        a href="/console" Queues
+        == "&bull;"
+        a href="/console/routes" Routes
+      == yield

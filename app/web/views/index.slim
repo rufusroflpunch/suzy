@@ -1,0 +1,21 @@
+table.u-full-width
+  thead
+    tr
+      th Queue
+      th Messages
+      th Enqueued
+      th Dequeued
+      th Actions
+  tbody
+    - @queues.each do |q|
+      tr
+        td = q.name
+        td = q.messages.count
+        td = q.enqueued
+        td = q.dequeued
+        td
+          small
+            a href="/console/purge/#{q.name}" Purge
+          == "&bull;"
+          small
+            a href="/console/delete/#{q.name}" Delete

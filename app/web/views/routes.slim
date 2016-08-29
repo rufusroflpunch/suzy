@@ -1,0 +1,15 @@
+table.u-full-width
+  thead
+    tr
+      th Description
+      th Path
+      th Request Method
+      th API Versions
+  tbody
+    - @routes.each do |r|
+      - unless r.request_method == 'OPTIONS'
+        tr
+          td = r.description
+          td == path_display(r.path)
+          td = r.request_method
+          td = r.version
