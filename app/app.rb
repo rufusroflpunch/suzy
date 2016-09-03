@@ -12,10 +12,14 @@ module App
   end
 
   def self.db
-    @db ||= Sequel.postgres(self.config.db_name,
-                            user: self.config.db_user,
-                            password: self.config.db_password,
-                            host: self.config.db_host
-    )
+    if ENV['DATABASE_URL']
+      @db ||= Sequel.connect(ENV['DATABSE_URL'])
+    else
+      @db ||= Sequel.postgres(self.config.db_name,
+                              user: self.config.db_user,
+                              password: self.config.db_password,
+                              host: self.config.db_host
+      )
+    end
   end
 end
