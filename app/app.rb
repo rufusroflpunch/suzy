@@ -13,7 +13,7 @@ module App
 
   def self.db
     if ENV['DATABASE_URL']
-      @db ||= Sequel.connect(ENV['DATABSE_URL'])
+      @db ||= Sequel.connect(ENV['DATABASE_URL'])
     else
       @db ||= Sequel.postgres(self.config.db_name,
                               user: self.config.db_user,
